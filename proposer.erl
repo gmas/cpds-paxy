@@ -65,7 +65,7 @@ collect(N, Round, MaxVoted, Proposal) ->
         true ->
           collect(N-1, Round, Voted, Value);
         false ->
-          collect(N-1, Round, MaxVoted, Proposa)
+          collect(N-1, Round, MaxVoted, Proposal)
       end;
     {promise, _, _,  _} ->
       collect(N, Round, MaxVoted, Proposal);
