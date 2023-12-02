@@ -1,18 +1,18 @@
 -module(paxy).
--export([start/1, stop/0, stop/1]).
+-export([start/1, stop/0, stop/1, crash/1]).
 
 -define(RED, {255,0,0}).
 -define(BLUE, {0,0,255}).
 -define(GREEN, {0,255,0}).
--define(YELLOW, {255,255,0}).
+-define(MAGENTA, {255,0, 255}).
 -define(CYAN, {0,255,255}).
 
 % Sleep is a list with the initial sleep time for each proposer
 start(Sleep) ->
   AcceptorNames = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Burns", "Abu"],
   AccRegister = [homer, marge, bart, lisa, maggie, burns, abu],
-  ProposerNames = [{"Fry", ?RED}, {"Bender", ?GREEN}, {"Leela", ?BLUE}, {"ZoidBerg", ?YELLOW}, {"Zapp", ?CYAN}],
-  PropInfo = [{fry, ?RED}, {bender, ?GREEN}, {leela, ?BLUE}, {zoidberg, ?YELLOW}, {zapp, ?CYAN}],
+  ProposerNames = [{"Fry", ?RED}, {"Bender", ?GREEN}, {"Leela", ?BLUE}, {"ZoidBerg", ?MAGENTA}, {"Zapp", ?CYAN}],
+  PropInfo = [{fry, ?RED}, {bender, ?GREEN}, {leela, ?BLUE}, {zoidberg, ?MAGENTA}, {zapp, ?CYAN}],
   register(gui, spawn(fun() -> gui:start(AcceptorNames, ProposerNames) end)),
   gui ! {reqState, self()},
   receive
@@ -73,5 +73,21 @@ stop(Name) ->
     undefined ->
       ok;
     Pid ->
+      pers:delete(Name),
       Pid ! stop
+  end.
+
+crash(Name) ->
+  case whereis(Name) of
+    undefined ->
+      ok;
+    Pid ->
+      pers:open(Name),
+      {_, _, _, Pn} = pers:read(Name),
+      Pn ! {updateAcc, "Voted: CRASHED", "Promised: CRASHED", {0,0,0}},
+      pers:close(Name),
+      unregister(Name),
+      exit(Pid, "crash"),
+      timer:sleep(3000),
+      register(Name, acceptor:start(Name, na))
   end.

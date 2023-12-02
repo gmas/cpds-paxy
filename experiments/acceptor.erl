@@ -3,7 +3,7 @@
 
 -define(delay, 500).
 -define(drop, 1).
--define(drop_chance, 10).
+-define(drop_prob, 10).
 
 start(Name, PanelId) ->
   spawn(fun() -> init(Name, PanelId) end).
@@ -12,14 +12,25 @@ init(Name, PanelId) ->
   Promised = order:null(),
   Voted = order:null(),
   Value = na,
-  acceptor(Name, Promised, Voted, Value, PanelId).
+  %acceptor(Name, Promised, Voted, Value, PanelId).
+  pers:open(Name),
+  {Pr, Vt, Ac, Pn} = pers:read(Name),
+  case Pn == na of
+    true ->
+      acceptor(Name, Promised, Voted, Value, PanelId);
+    false ->
+      Pn ! {updateAcc, "Restarted: " ++ io_lib:format("~p", [Vt]),
+          "Promised: " ++ io_lib:format("~p", [Pr]), Ac},
+      acceptor(Name, Pr, Vt, Ac, Pn)
+    end.
 
 acceptor(Name, Promised, Voted, Value, PanelId) ->
   receive
     {prepare, Proposer, Round} ->
       case order:gr(Round, Promised) of
         true ->
-          send(Name, Proposer, {promise, Round, Voted, Value}, ?delay, ?drop_chance),
+          pers:store(Name, Round, Voted, Value, PanelId),
+          send(Name, Proposer, {promise, Round, Voted, Value}, ?delay, ?drop_prob, true),
       io:format("[Acceptor ~w] Phase 1: promised ~w voted ~w colour ~w~n",
                  [Name, Round, Voted, Value]),
           % Update gui
@@ -28,13 +39,13 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
                      "Promised: " ++ io_lib:format("~p", [Round]), Colour},
           acceptor(Name, Round, Voted, Value, PanelId);
         false ->
-          %send(Name, Proposer, {sorry, {prepare, Round}}, ?delay, ?drop_chance),
+          send(Name, Proposer, {sorry, {prepare, Round}}, ?delay, ?drop_prob, true),
           acceptor(Name, Promised, Voted, Value, PanelId)
       end;
     {accept, Proposer, Round, Proposal} ->
       case order:goe(Round, Promised) of
         true ->
-          send(Name, Proposer, {vote, Round}, ?delay, ?drop_chance),
+          send(Name, Proposer, {vote, Round}, ?delay, ?drop_prob, true),
           case order:goe(Round, Voted) of
             true ->
       io:format("[Acceptor ~w] Phase 2: promised ~w voted ~w colour ~w~n",
@@ -44,10 +55,11 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
                          "Promised: " ++ io_lib:format("~p", [Promised]), Proposal},
               acceptor(Name, Promised, Round, Proposal, PanelId);
             false ->
+              pers:store(Name, Promised, Round, Value, PanelId),
               acceptor(Name, Promised, Voted, Value, PanelId)
           end;
         false ->
-          %send(Name, Proposer, {sorry, {accept, Round}}, ?delay, ?drop_chance),
+          send(Name, Proposer, {sorry, {accept, Round}}, ?delay, ?drop_prob, true),
           acceptor(Name, Promised, Voted, Value, PanelId)
       end;
     stop ->
@@ -55,8 +67,8 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
       ok
   end.
 
-send(Name, Proposer, Message, Delay_num, Drop_Chance) ->
-  P = rand:uniform(Drop_Chance),
+send(Name, Proposer, Message, Delay_num, Drop_prob, Drop_sorry) ->
+  P = rand:uniform(Drop_prob),
   if P =< ?drop ->
     io:format("[Acceptor ~w] Drop MSG: ~w to ~w~n", [Name, Message, Proposer]);
   true ->
@@ -64,7 +76,12 @@ send(Name, Proposer, Message, Delay_num, Drop_Chance) ->
         T = rand:uniform(Delay_num),
         timer:send_after(T, Proposer, Message),
         io:format("[Acceptor ~w] Send MSG: ~w to ~w with delay ~w~n", [Name, Message, Proposer, T]);
-      true ->
-        Proposer ! Message
+    true ->
+        {OP, _} = Message,
+        if Drop_sorry, OP == sorry ->
+          io:format("[Acceptor ~w] Drop sorry: ~w to ~w~n", [Name, Message, Proposer]);
+        true ->
+          Proposer ! Message
+        end
     end
   end.
