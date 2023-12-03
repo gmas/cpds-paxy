@@ -12,7 +12,6 @@ init(Name, PanelId) ->
   Promised = order:null(),
   Voted = order:null(),
   Value = na,
-  %acceptor(Name, Promised, Voted, Value, PanelId).
   pers:open(Name),
   {Pr, Vt, Ac, Pn} = pers:read(Name),
   case Pn == na of
@@ -67,35 +66,30 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
       ok
   end.
 
+send(Name, Proposer, Message, Delay_num) ->
+  if Delay_num > 0 ->
+      T = rand:uniform(Delay_num),
+      timer:send_after(T, Proposer, Message),
+      io:format("[Acceptor ~w] Send MSG: ~w to ~w with delay ~w ms~n", [Name, Message, Proposer, T]);
+  true ->
+      Proposer ! Message
+  end.
+
+send(Name, Proposer, Message, Delay_num, Drop_prob) ->
+  P = rand:uniform(100),
+  if P =< Drop_prob ->
+    io:format("[Acceptor ~w] Drop MSG: ~w to ~w~n", [Name, Message, Proposer]);
+  true ->
+    send(Name, Proposer, Message, Delay_num)
+  end.
+
 send(Name, Proposer, Message, Delay_num, Drop_prob, Drop_sorry) ->
   if Drop_sorry ->
     if element(1, Message) == sorry ->
       io:format("[Acceptor ~w] Drop sorry: ~w to ~w~n", [Name, Message, Proposer]);
     true ->
-      P = rand:uniform(100),
-      if P =< Drop_prob ->
-        io:format("[Acceptor ~w] Drop MSG: ~w to ~w~n", [Name, Message, Proposer]);
-      true ->
-        if Delay_num > 0 ->
-            T = rand:uniform(Delay_num),
-            timer:send_after(T, Proposer, Message),
-            io:format("[Acceptor ~w] Send MSG: ~w to ~w with delay ~w~n", [Name, Message, Proposer, T]);
-        true ->
-            Proposer ! Message
-        end
-      end
+      send(Name, Proposer, Message, Delay_num, Drop_prob)
     end;
   true ->
-    P = rand:uniform(100),
-    if P =< Drop_prob ->
-      io:format("[Acceptor ~w] Drop MSG: ~w to ~w~n", [Name, Message, Proposer]);
-    true ->
-      if Delay_num > 0 ->
-          T = rand:uniform(Delay_num),
-          timer:send_after(T, Proposer, Message),
-          io:format("[Acceptor ~w] Send MSG: ~w to ~w with delay ~w~n", [Name, Message, Proposer, T]);
-      true ->
-          Proposer ! Message
-      end
-    end
+      send(Name, Proposer, Message, Delay_num, Drop_prob)
   end.
