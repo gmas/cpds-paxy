@@ -9,8 +9,8 @@
 
 % Sleep is a list with the initial sleep time for each proposer
 start(Sleep) ->
-  AcceptorNames = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Burns", "Abu"],
-  AccRegister = [homer, marge, bart, lisa, maggie, burns, abu],
+  AcceptorNames = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Burns", "Apu", "Abraham", "Ned", "Moe"],
+  AccRegister = [homer, marge, bart, lisa, maggie, burns, apu, abraham, ned, moe],
   ProposerNames = [{"Fry", ?RED}, {"Bender", ?GREEN}, {"Leela", ?BLUE}, {"ZoidBerg", ?MAGENTA}, {"Zapp", ?CYAN}],
   PropInfo = [{fry, ?RED}, {bender, ?GREEN}, {leela, ?BLUE}, {zoidberg, ?MAGENTA}, {zapp, ?CYAN}],
   register(gui, spawn(fun() -> gui:start(AcceptorNames, ProposerNames) end)),
@@ -65,7 +65,10 @@ stop() ->
   stop(lisa),
   stop(maggie),
   stop(burns),
-  stop(abu),
+  stop(apu),
+  stop(abraham),
+  stop(ned),
+  stop(moe),
   stop(gui).
 
 stop(Name) ->
