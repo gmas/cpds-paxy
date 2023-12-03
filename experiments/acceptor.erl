@@ -1,9 +1,9 @@
 -module(acceptor).
 -export([start/2]).
 
--define(delay, 500).
--define(drop_prob, 10).
--define(may_drop, true).
+-define(delay, 0).
+-define(drop_prob, 0).
+-define(drop_sorry, false).
 
 start(Name, PanelId) ->
   spawn(fun() -> init(Name, PanelId) end).
@@ -30,7 +30,7 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
       case order:gr(Round, Promised) of
         true ->
           pers:store(Name, Round, Voted, Value, PanelId),
-          send(Name, Proposer, {promise, Round, Voted, Value}, ?delay, ?drop_prob, ?may_drop),
+          send(Name, Proposer, {promise, Round, Voted, Value}, ?delay, ?drop_prob, ?drop_sorry),
       io:format("[Acceptor ~w] Phase 1: promised ~w voted ~w colour ~w~n",
                  [Name, Round, Voted, Value]),
           % Update gui
@@ -39,13 +39,13 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
                      "Promised: " ++ io_lib:format("~p", [Round]), Colour},
           acceptor(Name, Round, Voted, Value, PanelId);
         false ->
-          send(Name, Proposer, {sorry, {prepare, Round}}, ?delay, ?drop_prob, ?may_drop),
+          send(Name, Proposer, {sorry, {prepare, Round}}, ?delay, ?drop_prob, ?drop_sorry),
           acceptor(Name, Promised, Voted, Value, PanelId)
       end;
     {accept, Proposer, Round, Proposal} ->
       case order:goe(Round, Promised) of
         true ->
-          send(Name, Proposer, {vote, Round}, ?delay, ?drop_prob, ?may_drop),
+          send(Name, Proposer, {vote, Round}, ?delay, ?drop_prob, ?drop_sorry),
           case order:goe(Round, Voted) of
             true ->
       io:format("[Acceptor ~w] Phase 2: promised ~w voted ~w colour ~w~n",
@@ -59,7 +59,7 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
               acceptor(Name, Promised, Voted, Value, PanelId)
           end;
         false ->
-          send(Name, Proposer, {sorry, {accept, Round}}, ?delay, ?drop_prob, ?may_drop),
+          send(Name, Proposer, {sorry, {accept, Round}}, ?delay, ?drop_prob, ?drop_sorry),
           acceptor(Name, Promised, Voted, Value, PanelId)
       end;
     stop ->
@@ -68,20 +68,24 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
   end.
 
 send(Name, Proposer, Message, Delay_num, Drop_prob, Drop_sorry) ->
+  if Drop_sorry ->
+    if element(1, Message) == sorry ->
+      io:format("[Acceptor ~w] Drop sorry: ~w to ~w~n", [Name, Message, Proposer]);
+    true ->
+      ok
+    end;
+  true ->
+    ok
+  end,
   P = rand:uniform(100),
   if P =< Drop_prob ->
     io:format("[Acceptor ~w] Drop MSG: ~w to ~w~n", [Name, Message, Proposer]);
   true ->
-    if Delay_num > 1 ->
+    if Delay_num > 0 ->
         T = rand:uniform(Delay_num),
         timer:send_after(T, Proposer, Message),
         io:format("[Acceptor ~w] Send MSG: ~w to ~w with delay ~w~n", [Name, Message, Proposer, T]);
     true ->
-        {OP, _} = Message,
-        if Drop_sorry, OP == sorry ->
-          io:format("[Acceptor ~w] Drop sorry: ~w to ~w~n", [Name, Message, Proposer]);
-        true ->
-          Proposer ! Message
-        end
+        Proposer ! Message
     end
   end.
