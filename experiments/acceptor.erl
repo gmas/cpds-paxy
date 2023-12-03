@@ -72,20 +72,30 @@ send(Name, Proposer, Message, Delay_num, Drop_prob, Drop_sorry) ->
     if element(1, Message) == sorry ->
       io:format("[Acceptor ~w] Drop sorry: ~w to ~w~n", [Name, Message, Proposer]);
     true ->
-      ok
+      P = rand:uniform(100),
+      if P =< Drop_prob ->
+        io:format("[Acceptor ~w] Drop MSG: ~w to ~w~n", [Name, Message, Proposer]);
+      true ->
+        if Delay_num > 0 ->
+            T = rand:uniform(Delay_num),
+            timer:send_after(T, Proposer, Message),
+            io:format("[Acceptor ~w] Send MSG: ~w to ~w with delay ~w~n", [Name, Message, Proposer, T]);
+        true ->
+            Proposer ! Message
+        end
+      end
     end;
   true ->
-    ok
-  end,
-  P = rand:uniform(100),
-  if P =< Drop_prob ->
-    io:format("[Acceptor ~w] Drop MSG: ~w to ~w~n", [Name, Message, Proposer]);
-  true ->
-    if Delay_num > 0 ->
-        T = rand:uniform(Delay_num),
-        timer:send_after(T, Proposer, Message),
-        io:format("[Acceptor ~w] Send MSG: ~w to ~w with delay ~w~n", [Name, Message, Proposer, T]);
+    P = rand:uniform(100),
+    if P =< Drop_prob ->
+      io:format("[Acceptor ~w] Drop MSG: ~w to ~w~n", [Name, Message, Proposer]);
     true ->
-        Proposer ! Message
+      if Delay_num > 0 ->
+          T = rand:uniform(Delay_num),
+          timer:send_after(T, Proposer, Message),
+          io:format("[Acceptor ~w] Send MSG: ~w to ~w with delay ~w~n", [Name, Message, Proposer, T]);
+      true ->
+          Proposer ! Message
+      end
     end
   end.

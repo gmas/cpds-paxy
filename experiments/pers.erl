@@ -4,11 +4,13 @@
 %% dets module provides term storage on file
 
 open(Name) ->
-    dets:open_file(Name, []).
+    FileName = io_lib:format("~s.pers", [Name]),
+    dets:open_file(FileName, []).
 
 %% returns the object with the key 'perm' stored in the table 'Name'
 read(Name) ->
-    case dets:lookup(Name, perm) of
+    FileName = io_lib:format("~s.pers", [Name]),
+    case dets:lookup(FileName, perm) of
         [{perm, Pr, Vt, Ac, Pn}] ->
             {Pr, Vt, Ac, Pn};
         [] ->
@@ -17,10 +19,13 @@ read(Name) ->
 
 %% inserts one object {Pr, Vt, Ac, Pn} into the table 'Name'
 store(Name, Pr, Vt, Ac, Pn)->
-    dets:insert(Name, {perm, Pr, Vt, Ac, Pn}).
+    FileName = io_lib:format("~s.pers", [Name]),
+    dets:insert(FileName, {perm, Pr, Vt, Ac, Pn}).
 
 close(Name) ->
-    dets:close(Name).
+    FileName = io_lib:format("~s.pers", [Name]),
+    dets:close(FileName).
 
 delete(Name) ->
-    file:delete(Name).
+    FileName = io_lib:format("~s.pers", [Name]),
+    file:delete(FileName).
