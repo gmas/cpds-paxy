@@ -72,7 +72,7 @@ send(Name, Proposer, Message, Delay_num) ->
       timer:send_after(T, Proposer, Message),
       io:format("[Acceptor ~w] Send MSG: ~w to ~w with delay ~w ms~n", [Name, Message, Proposer, T]);
   true ->
-      io:format("[Acceptor ~w] Send MSG: ~w to ~w ms~n", [Name, Message, Proposer]),
+      io:format("[Acceptor ~w] Send MSG: ~w to ~w~n", [Name, Message, Proposer]),
       Proposer ! Message
   end.
 
