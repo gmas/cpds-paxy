@@ -1,0 +1,442 @@
+1> paxy:start([1,1,1]).
+[Gui] state requested
+<0.104.0>
+[Proposer fry] Phase 1: round {0,fry} proposal {255,0,0}
+[Proposer bender] Phase 1: round {0,bender} proposal {0,255,0}
+[Proposer leela] Phase 1: round {0,leela} proposal {0,0,255}
+[Acceptor bart] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor homer] Drop MSG: {promise,{0,fry},{0,0},na} to <0.105.0>
+[Acceptor lisa] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {0,fry} voted {0,0} colour na
+[Proposer fry] Phase 2: round {0,fry} proposal {255,0,0} (was {255,0,0})
+[Acceptor marge] Drop MSG: {promise,{0,fry},{0,0},na} to <0.105.0>
+[Acceptor bart] Drop MSG: {sorry,{prepare,{0,bender}}} to <0.106.0>
+[Acceptor homer] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor lisa] Drop MSG: {promise,{0,leela},{0,0},na} to <0.107.0>
+[Acceptor maggie] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor bart] Drop MSG: {promise,{0,leela},{0,0},na} to <0.107.0>
+[Acceptor homer] Drop MSG: {sorry,{prepare,{0,bender}}} to <0.106.0>
+[Acceptor lisa] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor marge] Drop MSG: {sorry,{prepare,{0,bender}}} to <0.106.0>
+[Acceptor bart] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor homer] Drop MSG: {promise,{0,leela},{0,0},na} to <0.107.0>
+[Acceptor marge] Drop MSG: {promise,{0,leela},{0,0},na} to <0.107.0>
+[Acceptor bart] Drop MSG: {sorry,{accept,{0,fry}}} to <0.105.0>
+[Acceptor homer] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor homer] Drop MSG: {sorry,{accept,{0,fry}}} to <0.105.0>
+[Proposer leela] Phase 1: round {1,leela} proposal {0,0,255}
+[Acceptor homer] Phase 1: promised {1,leela} voted {0,0} colour na
+[Acceptor marge] Drop MSG: {promise,{1,leela},{0,0},na} to <0.107.0>
+[Acceptor bart] Drop MSG: {promise,{1,leela},{0,0},na} to <0.107.0>
+[Acceptor lisa] Phase 1: promised {1,leela} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {1,leela} voted {0,0} colour na
+[Proposer leela] Phase 2: round {1,leela} proposal {0,0,255} (was {0,0,255})
+[Acceptor marge] Phase 1: promised {1,leela} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {1,leela} voted {0,0} colour na
+[Proposer fry] Phase 1: round {1,fry} proposal {255,0,0}
+[Acceptor homer] Drop MSG: {vote,{1,leela}} to <0.107.0>
+[Acceptor lisa] Drop MSG: {vote,{1,leela}} to <0.107.0>
+[Acceptor maggie] Drop MSG: {vote,{1,leela}} to <0.107.0>
+[Acceptor marge] Drop MSG: {vote,{1,leela}} to <0.107.0>
+[Acceptor bart] Phase 2: promised {1,leela} voted {1,leela} colour {0,0,255}
+[Acceptor homer] Phase 2: promised {1,leela} voted {1,leela} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {1,leela} voted {1,leela} colour {0,0,255}
+[Acceptor maggie] Phase 2: promised {1,leela} voted {1,leela} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {1,leela} voted {1,leela} colour {0,0,255}
+[Acceptor bart] Drop MSG: {sorry,{prepare,{1,fry}}} to <0.105.0>
+[Acceptor lisa] Drop MSG: {sorry,{prepare,{1,fry}}} to <0.105.0>
+[Acceptor marge] Drop MSG: {sorry,{prepare,{1,fry}}} to <0.105.0>
+[Proposer bender] Phase 1: round {1,bender} proposal {0,255,0}
+[Acceptor bart] Drop MSG: {sorry,{prepare,{1,bender}}} to <0.106.0>
+[Acceptor lisa] Drop MSG: {sorry,{prepare,{1,bender}}} to <0.106.0>
+[Acceptor maggie] Drop MSG: {sorry,{prepare,{1,bender}}} to <0.106.0>
+[Proposer fry] Phase 1: round {2,fry} proposal {255,0,0}
+[Proposer bender] Phase 1: round {2,bender} proposal {0,255,0}
+[Acceptor maggie] Phase 1: promised {2,fry} voted {1,leela} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {2,fry} voted {1,leela} colour {0,0,255}
+[Acceptor homer] Drop MSG: {promise,{2,fry},{1,leela},{0,0,255}} to <0.105.0>
+[Acceptor bart] Drop MSG: {promise,{2,fry},{1,leela},{0,0,255}} to <0.105.0>
+[Acceptor marge] Drop MSG: {promise,{2,fry},{1,leela},{0,0,255}} to <0.105.0>
+[Acceptor maggie] Drop MSG: {sorry,{prepare,{2,bender}}} to <0.106.0>
+[Acceptor lisa] Drop MSG: {sorry,{prepare,{2,bender}}} to <0.106.0>
+[Acceptor homer] Phase 1: promised {2,fry} voted {1,leela} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {2,fry} voted {1,leela} colour {0,0,255}
+[Acceptor marge] Phase 1: promised {2,fry} voted {1,leela} colour {0,0,255}
+[Proposer leela] Phase 1: round {2,leela} proposal {0,0,255}
+[Acceptor marge] Drop MSG: {sorry,{prepare,{2,bender}}} to <0.106.0>
+[Acceptor homer] Phase 1: promised {2,leela} voted {1,leela} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {2,leela} voted {1,leela} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {2,leela} voted {1,leela} colour {0,0,255}
+[Proposer leela] Phase 2: round {2,leela} proposal {0,0,255} (was {0,0,255})
+[Acceptor lisa] Phase 1: promised {2,leela} voted {1,leela} colour {0,0,255}
+[Acceptor marge] Phase 1: promised {2,leela} voted {1,leela} colour {0,0,255}
+[Acceptor maggie] Drop MSG: {vote,{2,leela}} to <0.107.0>
+[Acceptor homer] Drop MSG: {vote,{2,leela}} to <0.107.0>
+[Acceptor bart] Drop MSG: {vote,{2,leela}} to <0.107.0>
+[Acceptor lisa] Phase 2: promised {2,leela} voted {2,leela} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {2,leela} voted {2,leela} colour {0,0,255}
+[Acceptor maggie] Phase 2: promised {2,leela} voted {2,leela} colour {0,0,255}
+[Acceptor homer] Phase 2: promised {2,leela} voted {2,leela} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {2,leela} voted {2,leela} colour {0,0,255}
+[Proposer fry] Phase 1: round {3,fry} proposal {255,0,0}
+[Acceptor marge] Drop MSG: {promise,{3,fry},{2,leela},{0,0,255}} to <0.105.0>
+[Acceptor homer] Phase 1: promised {3,fry} voted {2,leela} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {3,fry} voted {2,leela} colour {0,0,255}
+[Acceptor lisa] Drop MSG: {promise,{3,fry},{2,leela},{0,0,255}} to <0.105.0>
+[Acceptor maggie] Phase 1: promised {3,fry} voted {2,leela} colour {0,0,255}
+[Proposer fry] Phase 2: round {3,fry} proposal {0,0,255} (was {255,0,0})
+[Acceptor marge] Phase 1: promised {3,fry} voted {2,leela} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {3,fry} voted {2,leela} colour {0,0,255}
+[Acceptor homer] Phase 2: promised {3,fry} voted {3,fry} colour {0,0,255}
+[Acceptor bart] Drop MSG: {vote,{3,fry}} to <0.105.0>
+[Acceptor maggie] Phase 2: promised {3,fry} voted {3,fry} colour {0,0,255}
+[Acceptor marge] Drop MSG: {vote,{3,fry}} to <0.105.0>
+[Acceptor lisa] Drop MSG: {vote,{3,fry}} to <0.105.0>
+[Acceptor bart] Phase 2: promised {3,fry} voted {3,fry} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {3,fry} voted {3,fry} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {3,fry} voted {3,fry} colour {0,0,255}
+[Proposer bender] Phase 1: round {3,bender} proposal {0,255,0}
+[Acceptor bart] Drop MSG: {sorry,{prepare,{3,bender}}} to <0.106.0>
+[Acceptor lisa] Drop MSG: {sorry,{prepare,{3,bender}}} to <0.106.0>
+[Proposer leela] Phase 1: round {3,leela} proposal {0,0,255}
+[Acceptor marge] Drop MSG: {promise,{3,leela},{3,fry},{0,0,255}} to <0.107.0>
+[Acceptor bart] Phase 1: promised {3,leela} voted {3,fry} colour {0,0,255}
+[Acceptor maggie] Drop MSG: {promise,{3,leela},{3,fry},{0,0,255}} to <0.107.0>
+[Acceptor homer] Phase 1: promised {3,leela} voted {3,fry} colour {0,0,255}
+[Proposer leela] Phase 2: round {3,leela} proposal {0,0,255} (was {0,0,255})
+[Acceptor lisa] Phase 1: promised {3,leela} voted {3,fry} colour {0,0,255}
+[Acceptor marge] Phase 1: promised {3,leela} voted {3,fry} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {3,leela} voted {3,fry} colour {0,0,255}
+[Acceptor homer] Drop MSG: {vote,{3,leela}} to <0.107.0>
+[Acceptor bart] Drop MSG: {vote,{3,leela}} to <0.107.0>
+[Acceptor lisa] Drop MSG: {vote,{3,leela}} to <0.107.0>
+[Acceptor marge] Drop MSG: {vote,{3,leela}} to <0.107.0>
+[Acceptor maggie] Phase 2: promised {3,leela} voted {3,leela} colour {0,0,255}
+[Acceptor homer] Phase 2: promised {3,leela} voted {3,leela} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {3,leela} voted {3,leela} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {3,leela} voted {3,leela} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {3,leela} voted {3,leela} colour {0,0,255}
+[Proposer fry] Phase 1: round {4,fry} proposal {255,0,0}
+[Acceptor marge] Phase 1: promised {4,fry} voted {3,leela} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {4,fry} voted {3,leela} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {4,fry} voted {3,leela} colour {0,0,255}
+[Proposer fry] Phase 2: round {4,fry} proposal {0,0,255} (was {255,0,0})
+[Acceptor homer] Drop MSG: {promise,{4,fry},{3,leela},{0,0,255}} to <0.105.0>
+[Acceptor maggie] Drop MSG: {promise,{4,fry},{3,leela},{0,0,255}} to <0.105.0>
+[Acceptor bart] Phase 2: promised {4,fry} voted {4,fry} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {4,fry} voted {4,fry} colour {0,0,255}
+[Acceptor marge] Drop MSG: {vote,{4,fry}} to <0.105.0>
+[Acceptor homer] Phase 1: promised {4,fry} voted {3,leela} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {4,fry} voted {3,leela} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {4,fry} voted {4,fry} colour {0,0,255}
+[Acceptor homer] Drop MSG: {vote,{4,fry}} to <0.105.0>
+[Acceptor maggie] Phase 2: promised {4,fry} voted {4,fry} colour {0,0,255}
+[Proposer fry] DECIDED {0,0,255} in round {4,fry} after 8198 ms
+[Acceptor homer] Phase 2: promised {4,fry} voted {4,fry} colour {0,0,255}
+[Proposer bender] Phase 1: round {4,bender} proposal {0,255,0}
+[Acceptor bart] Drop MSG: {sorry,{prepare,{4,bender}}} to <0.106.0>
+[Acceptor marge] Drop MSG: {sorry,{prepare,{4,bender}}} to <0.106.0>
+[Proposer leela] Phase 1: round {4,leela} proposal {0,0,255}
+[Acceptor homer] Phase 1: promised {4,leela} voted {4,fry} colour {0,0,255}
+[Acceptor lisa] Drop MSG: {promise,{4,leela},{4,fry},{0,0,255}} to <0.107.0>
+[Acceptor bart] Drop MSG: {promise,{4,leela},{4,fry},{0,0,255}} to <0.107.0>
+[Acceptor maggie] Drop MSG: {promise,{4,leela},{4,fry},{0,0,255}} to <0.107.0>
+[Acceptor marge] Phase 1: promised {4,leela} voted {4,fry} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {4,leela} voted {4,fry} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {4,leela} voted {4,fry} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {4,leela} voted {4,fry} colour {0,0,255}
+[Proposer leela] Phase 1: round {5,leela} proposal {0,0,255}
+[Acceptor homer] Drop MSG: {promise,{5,leela},{4,fry},{0,0,255}} to <0.107.0>
+[Acceptor bart] Phase 1: promised {5,leela} voted {4,fry} colour {0,0,255}
+[Acceptor marge] Phase 1: promised {5,leela} voted {4,fry} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {5,leela} voted {4,fry} colour {0,0,255}
+[Proposer leela] Phase 2: round {5,leela} proposal {0,0,255} (was {0,0,255})
+[Acceptor maggie] Phase 1: promised {5,leela} voted {4,fry} colour {0,0,255}
+[Acceptor homer] Phase 1: promised {5,leela} voted {4,fry} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {5,leela} voted {5,leela} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {5,leela} voted {5,leela} colour {0,0,255}
+[Acceptor lisa] Drop MSG: {vote,{5,leela}} to <0.107.0>
+[Acceptor maggie] Phase 2: promised {5,leela} voted {5,leela} colour {0,0,255}
+[Proposer leela] DECIDED {0,0,255} in round {5,leela} after 10272 ms
+[Acceptor homer] Phase 2: promised {5,leela} voted {5,leela} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {5,leela} voted {5,leela} colour {0,0,255}
+[Proposer bender] Phase 1: round {5,bender} proposal {0,255,0}
+[Acceptor homer] Drop MSG: {sorry,{prepare,{5,bender}}} to <0.106.0>
+[Proposer bender] Phase 1: round {6,bender} proposal {0,255,0}
+[Acceptor homer] Phase 1: promised {6,bender} voted {5,leela} colour {0,0,255}
+[Acceptor bart] Drop MSG: {promise,{6,bender},{5,leela},{0,0,255}} to <0.106.0>
+[Acceptor maggie] Drop MSG: {promise,{6,bender},{5,leela},{0,0,255}} to <0.106.0>
+[Acceptor lisa] Drop MSG: {promise,{6,bender},{5,leela},{0,0,255}} to <0.106.0>
+[Acceptor marge] Phase 1: promised {6,bender} voted {5,leela} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {6,bender} voted {5,leela} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {6,bender} voted {5,leela} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {6,bender} voted {5,leela} colour {0,0,255}
+[Proposer bender] Phase 1: round {7,bender} proposal {0,255,0}
+[Acceptor bart] Phase 1: promised {7,bender} voted {5,leela} colour {0,0,255}
+[Acceptor homer] Drop MSG: {promise,{7,bender},{5,leela},{0,0,255}} to <0.106.0>
+[Acceptor marge] Phase 1: promised {7,bender} voted {5,leela} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {7,bender} voted {5,leela} colour {0,0,255}
+[Proposer bender] Phase 2: round {7,bender} proposal {0,0,255} (was {0,255,0})
+[Acceptor maggie] Phase 1: promised {7,bender} voted {5,leela} colour {0,0,255}
+[Acceptor homer] Phase 1: promised {7,bender} voted {5,leela} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {7,bender} voted {7,bender} colour {0,0,255}
+[Acceptor lisa] Drop MSG: {vote,{7,bender}} to <0.106.0>
+[Acceptor marge] Phase 2: promised {7,bender} voted {7,bender} colour {0,0,255}
+[Acceptor maggie] Drop MSG: {vote,{7,bender}} to <0.106.0>
+[Acceptor homer] Phase 2: promised {7,bender} voted {7,bender} colour {0,0,255}
+[Proposer bender] DECIDED {0,0,255} in round {7,bender} after 14751 ms
+[Acceptor lisa] Phase 2: promised {7,bender} voted {7,bender} colour {0,0,255}
+[Acceptor maggie] Phase 2: promised {7,bender} voted {7,bender} colour {0,0,255}
+[Paxy] Total elapsed time: 14761 ms
+2> paxy:stop().
+stop
+3>
+BREAK: (a)bort (A)bort with dump (c)ontinue (p)roc info (i)nfo
+       (l)oaded (v)ersion (k)ill (D)b-tables (d)istribution
+a
+PS C:\lj\Application\2022\spanish\LJ\UPC\courses\CPDS\DistributedSystem\assignment_0\cpds-paxy\experiments> erl
+Erlang/OTP 26 [erts-14.1.1] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
+
+Eshell V14.1.1 (press Ctrl+G to abort, type help(). for help)
+1> paxy:start([1,1,1,1,1]).
+[Gui] state requested
+<0.104.0>
+[Proposer fry] Phase 1: round {0,fry} proposal {255,0,0}
+[Proposer bender] Phase 1: round {0,bender} proposal {0,255,0}
+[Proposer leela] Phase 1: round {0,leela} proposal {0,0,255}
+[Acceptor marge] Drop MSG: {promise,{0,fry},{0,0},na} to <0.105.0>
+[Acceptor homer] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor maggie] Drop MSG: {promise,{0,fry},{0,0},na} to <0.105.0>
+[Proposer fry] Phase 2: round {0,fry} proposal {255,0,0} (was {255,0,0})
+[Acceptor marge] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor homer] Drop MSG: {sorry,{prepare,{0,bender}}} to <0.106.0>
+[Acceptor bart] Drop MSG: {sorry,{prepare,{0,bender}}} to <0.106.0>
+[Acceptor lisa] Drop MSG: {sorry,{prepare,{0,bender}}} to <0.106.0>
+[Acceptor maggie] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor marge] Drop MSG: {sorry,{prepare,{0,bender}}} to <0.106.0>
+[Acceptor homer] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor bart] Drop MSG: {promise,{0,leela},{0,0},na} to <0.107.0>
+[Acceptor lisa] Drop MSG: {promise,{0,leela},{0,0},na} to <0.107.0>
+[Acceptor maggie] Drop MSG: {sorry,{prepare,{0,bender}}} to <0.106.0>
+[Acceptor marge] Drop MSG: {promise,{0,leela},{0,0},na} to <0.107.0>
+[Acceptor bart] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor maggie] Drop MSG: {promise,{0,leela},{0,0},na} to <0.107.0>
+[Acceptor marge] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor marge] Drop MSG: {sorry,{accept,{0,fry}}} to <0.105.0>
+[Acceptor maggie] Drop MSG: {sorry,{accept,{0,fry}}} to <0.105.0>
+[Proposer bender] Phase 1: round {1,bender} proposal {0,255,0}
+[Acceptor homer] Phase 1: promised {1,bender} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {1,bender} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {1,bender} voted {0,0} colour na
+[Acceptor maggie] Drop MSG: {promise,{1,bender},{0,0},na} to <0.106.0>
+[Acceptor marge] Drop MSG: {promise,{1,bender},{0,0},na} to <0.106.0>
+[Proposer bender] Phase 2: round {1,bender} proposal {0,255,0} (was {0,255,0})
+[Acceptor maggie] Phase 1: promised {1,bender} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {1,bender} voted {0,0} colour na
+[Acceptor homer] Phase 2: promised {1,bender} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Drop MSG: {vote,{1,bender}} to <0.106.0>
+[Acceptor lisa] Drop MSG: {vote,{1,bender}} to <0.106.0>
+[Acceptor maggie] Phase 2: promised {1,bender} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Drop MSG: {vote,{1,bender}} to <0.106.0>
+[Acceptor bart] Phase 2: promised {1,bender} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Phase 2: promised {1,bender} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Phase 2: promised {1,bender} voted {1,bender} colour {0,255,0}
+[Proposer fry] Phase 1: round {1,fry} proposal {255,0,0}
+[Proposer leela] Phase 1: round {1,leela} proposal {0,0,255}
+[Acceptor marge] Drop MSG: {promise,{1,fry},{1,bender},{0,255,0}} to <0.105.0>
+[Acceptor homer] Phase 1: promised {1,fry} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Drop MSG: {promise,{1,fry},{1,bender},{0,255,0}} to <0.105.0>
+[Acceptor bart] Drop MSG: {promise,{1,fry},{1,bender},{0,255,0}} to <0.105.0>
+[Acceptor maggie] Phase 1: promised {1,fry} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {1,fry} voted {1,bender} colour {0,255,0}
+[Acceptor homer] Drop MSG: {promise,{1,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor lisa] Phase 1: promised {1,fry} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {1,fry} voted {1,bender} colour {0,255,0}
+[Acceptor maggie] Drop MSG: {promise,{1,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor marge] Drop MSG: {promise,{1,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor homer] Phase 1: promised {1,leela} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Drop MSG: {promise,{1,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor bart] Drop MSG: {promise,{1,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor maggie] Phase 1: promised {1,leela} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {1,leela} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {1,leela} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {1,leela} voted {1,bender} colour {0,255,0}
+[Proposer bender] Phase 1: round {2,bender} proposal {0,255,0}
+[Acceptor bart] Drop MSG: {promise,{2,bender},{1,bender},{0,255,0}} to <0.106.0>
+[Acceptor marge] Drop MSG: {promise,{2,bender},{1,bender},{0,255,0}} to <0.106.0>
+[Acceptor homer] Phase 1: promised {2,bender} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Drop MSG: {promise,{2,bender},{1,bender},{0,255,0}} to <0.106.0>
+[Acceptor maggie] Phase 1: promised {2,bender} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {2,bender} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {2,bender} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {2,bender} voted {1,bender} colour {0,255,0}
+[Proposer fry] Phase 1: round {2,fry} proposal {255,0,0}
+[Proposer leela] Phase 1: round {2,leela} proposal {0,0,255}
+[Acceptor bart] Drop MSG: {promise,{2,fry},{1,bender},{0,255,0}} to <0.105.0>
+[Acceptor marge] Drop MSG: {promise,{2,fry},{1,bender},{0,255,0}} to <0.105.0>
+[Acceptor homer] Drop MSG: {promise,{2,fry},{1,bender},{0,255,0}} to <0.105.0>
+[Acceptor lisa] Drop MSG: {promise,{2,fry},{1,bender},{0,255,0}} to <0.105.0>
+[Acceptor maggie] Phase 1: promised {2,fry} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {2,fry} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {2,fry} voted {1,bender} colour {0,255,0}
+[Acceptor homer] Phase 1: promised {2,fry} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {2,fry} voted {1,bender} colour {0,255,0}
+[Acceptor maggie] Phase 1: promised {2,leela} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Drop MSG: {promise,{2,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor marge] Drop MSG: {promise,{2,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor homer] Phase 1: promised {2,leela} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Drop MSG: {promise,{2,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor bart] Phase 1: promised {2,leela} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {2,leela} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {2,leela} voted {1,bender} colour {0,255,0}
+[Proposer bender] Phase 1: round {3,bender} proposal {0,255,0}
+[Acceptor maggie] Phase 1: promised {3,bender} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Drop MSG: {promise,{3,bender},{1,bender},{0,255,0}} to <0.106.0>
+[Acceptor lisa] Drop MSG: {promise,{3,bender},{1,bender},{0,255,0}} to <0.106.0>
+[Acceptor marge] Drop MSG: {promise,{3,bender},{1,bender},{0,255,0}} to <0.106.0>
+[Acceptor homer] Phase 1: promised {3,bender} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {3,bender} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {3,bender} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {3,bender} voted {1,bender} colour {0,255,0}
+[Proposer fry] Phase 1: round {3,fry} proposal {255,0,0}
+[Proposer leela] Phase 1: round {3,leela} proposal {0,0,255}
+[Acceptor homer] Drop MSG: {promise,{3,fry},{1,bender},{0,255,0}} to <0.105.0>
+[Acceptor marge] Phase 1: promised {3,fry} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {3,fry} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Drop MSG: {promise,{3,fry},{1,bender},{0,255,0}} to <0.105.0>
+[Acceptor maggie] Phase 1: promised {3,fry} voted {1,bender} colour {0,255,0}
+[Proposer fry] Phase 2: round {3,fry} proposal {0,255,0} (was {255,0,0})
+[Acceptor homer] Phase 1: promised {3,fry} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Drop MSG: {promise,{3,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor lisa] Phase 1: promised {3,leela} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {3,fry} voted {1,bender} colour {0,255,0}
+[Acceptor maggie] Phase 1: promised {3,leela} voted {1,bender} colour {0,255,0}
+[Acceptor homer] Drop MSG: {promise,{3,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor marge] Phase 1: promised {3,leela} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Drop MSG: {promise,{3,leela},{1,bender},{0,255,0}} to <0.107.0>
+[Acceptor homer] Phase 1: promised {3,leela} voted {1,bender} colour {0,255,0}
+[Acceptor marge] Drop MSG: {sorry,{accept,{3,fry}}} to <0.105.0>
+[Acceptor bart] Phase 1: promised {3,leela} voted {1,bender} colour {0,255,0}
+[Acceptor homer] Drop MSG: {sorry,{accept,{3,fry}}} to <0.105.0>
+[Proposer bender] Phase 1: round {4,bender} proposal {0,255,0}
+[Acceptor marge] Drop MSG: {promise,{4,bender},{1,bender},{0,255,0}} to <0.106.0>
+[Acceptor homer] Phase 1: promised {4,bender} voted {1,bender} colour {0,255,0}
+[Acceptor maggie] Phase 1: promised {4,bender} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {4,bender} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Drop MSG: {promise,{4,bender},{1,bender},{0,255,0}} to <0.106.0>
+[Proposer bender] Phase 2: round {4,bender} proposal {0,255,0} (was {0,255,0})
+[Acceptor marge] Phase 1: promised {4,bender} voted {1,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {4,bender} voted {1,bender} colour {0,255,0}
+[Acceptor lisa] Drop MSG: {vote,{4,bender}} to <0.106.0>
+[Acceptor maggie] Phase 2: promised {4,bender} voted {4,bender} colour {0,255,0}
+[Acceptor homer] Phase 2: promised {4,bender} voted {4,bender} colour {0,255,0}
+[Acceptor marge] Phase 2: promised {4,bender} voted {4,bender} colour {0,255,0}
+[Proposer bender] DECIDED {0,255,0} in round {4,bender} after 8146 ms
+[Acceptor bart] Phase 2: promised {4,bender} voted {4,bender} colour {0,255,0}
+[Acceptor lisa] Phase 2: promised {4,bender} voted {4,bender} colour {0,255,0}
+[Proposer leela] Phase 1: round {4,leela} proposal {0,0,255}
+[Acceptor maggie] Phase 1: promised {4,leela} voted {4,bender} colour {0,255,0}
+[Acceptor bart] Drop MSG: {promise,{4,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor homer] Drop MSG: {promise,{4,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor marge] Drop MSG: {promise,{4,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor lisa] Drop MSG: {promise,{4,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor bart] Phase 1: promised {4,leela} voted {4,bender} colour {0,255,0}
+[Acceptor homer] Phase 1: promised {4,leela} voted {4,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {4,leela} voted {4,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {4,leela} voted {4,bender} colour {0,255,0}
+[Proposer fry] Phase 1: round {4,fry} proposal {255,0,0}
+[Acceptor maggie] Drop MSG: {sorry,{prepare,{4,fry}}} to <0.105.0>
+[Acceptor bart] Drop MSG: {sorry,{prepare,{4,fry}}} to <0.105.0>
+[Acceptor lisa] Drop MSG: {sorry,{prepare,{4,fry}}} to <0.105.0>
+[Proposer fry] Phase 1: round {5,fry} proposal {255,0,0}
+[Proposer leela] Phase 1: round {5,leela} proposal {0,0,255}
+[Acceptor maggie] Drop MSG: {promise,{5,fry},{4,bender},{0,255,0}} to <0.105.0>
+[Acceptor bart] Drop MSG: {promise,{5,fry},{4,bender},{0,255,0}} to <0.105.0>
+[Acceptor homer] Drop MSG: {promise,{5,fry},{4,bender},{0,255,0}} to <0.105.0>
+[Acceptor lisa] Phase 1: promised {5,fry} voted {4,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {5,fry} voted {4,bender} colour {0,255,0}
+[Acceptor maggie] Phase 1: promised {5,fry} voted {4,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {5,fry} voted {4,bender} colour {0,255,0}
+[Acceptor homer] Phase 1: promised {5,fry} voted {4,bender} colour {0,255,0}
+[Acceptor lisa] Drop MSG: {promise,{5,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor marge] Drop MSG: {promise,{5,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor maggie] Drop MSG: {promise,{5,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor bart] Drop MSG: {promise,{5,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor homer] Drop MSG: {promise,{5,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor lisa] Phase 1: promised {5,leela} voted {4,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {5,leela} voted {4,bender} colour {0,255,0}
+[Acceptor maggie] Phase 1: promised {5,leela} voted {4,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {5,leela} voted {4,bender} colour {0,255,0}
+[Acceptor homer] Phase 1: promised {5,leela} voted {4,bender} colour {0,255,0}
+[Proposer leela] Phase 1: round {6,leela} proposal {0,0,255}
+[Acceptor homer] Phase 1: promised {6,leela} voted {4,bender} colour {0,255,0}
+[Acceptor marge] Drop MSG: {promise,{6,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor lisa] Drop MSG: {promise,{6,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor bart] Drop MSG: {promise,{6,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor maggie] Drop MSG: {promise,{6,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor marge] Phase 1: promised {6,leela} voted {4,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {6,leela} voted {4,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {6,leela} voted {4,bender} colour {0,255,0}
+[Acceptor maggie] Phase 1: promised {6,leela} voted {4,bender} colour {0,255,0}
+[Proposer fry] Phase 1: round {6,fry} proposal {255,0,0}
+[Acceptor marge] Drop MSG: {sorry,{prepare,{6,fry}}} to <0.105.0>
+[Proposer leela] Phase 1: round {7,leela} proposal {0,0,255}
+[Acceptor homer] Drop MSG: {promise,{7,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor marge] Drop MSG: {promise,{7,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor lisa] Phase 1: promised {7,leela} voted {4,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {7,leela} voted {4,bender} colour {0,255,0}
+[Acceptor maggie] Drop MSG: {promise,{7,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor homer] Phase 1: promised {7,leela} voted {4,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {7,leela} voted {4,bender} colour {0,255,0}
+[Acceptor maggie] Phase 1: promised {7,leela} voted {4,bender} colour {0,255,0}
+[Proposer fry] Phase 1: round {7,fry} proposal {255,0,0}
+[Acceptor homer] Drop MSG: {sorry,{prepare,{7,fry}}} to <0.105.0>
+[Acceptor marge] Drop MSG: {sorry,{prepare,{7,fry}}} to <0.105.0>
+[Acceptor bart] Drop MSG: {sorry,{prepare,{7,fry}}} to <0.105.0>
+[Acceptor lisa] Drop MSG: {sorry,{prepare,{7,fry}}} to <0.105.0>
+[Acceptor maggie] Drop MSG: {sorry,{prepare,{7,fry}}} to <0.105.0>
+[Proposer leela] Phase 1: round {8,leela} proposal {0,0,255}
+[Acceptor homer] Drop MSG: {promise,{8,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor marge] Drop MSG: {promise,{8,leela},{4,bender},{0,255,0}} to <0.107.0>
+[Acceptor maggie] Phase 1: promised {8,leela} voted {4,bender} colour {0,255,0}
+[Acceptor bart] Phase 1: promised {8,leela} voted {4,bender} colour {0,255,0}
+[Acceptor lisa] Phase 1: promised {8,leela} voted {4,bender} colour {0,255,0}
+[Proposer leela] Phase 2: round {8,leela} proposal {0,255,0} (was {0,0,255})
+[Acceptor homer] Phase 1: promised {8,leela} voted {4,bender} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {8,leela} voted {4,bender} colour {0,255,0}
+[Acceptor bart] Drop MSG: {vote,{8,leela}} to <0.107.0>
+[Acceptor lisa] Phase 2: promised {8,leela} voted {8,leela} colour {0,255,0}
+[Acceptor maggie] Drop MSG: {vote,{8,leela}} to <0.107.0>
+[Acceptor homer] Phase 2: promised {8,leela} voted {8,leela} colour {0,255,0}
+[Acceptor marge] Phase 2: promised {8,leela} voted {8,leela} colour {0,255,0}
+[Proposer leela] DECIDED {0,255,0} in round {8,leela} after 16647 ms
+[Acceptor bart] Phase 2: promised {8,leela} voted {8,leela} colour {0,255,0}
+[Acceptor maggie] Phase 2: promised {8,leela} voted {8,leela} colour {0,255,0}
+[Proposer fry] Phase 1: round {8,fry} proposal {255,0,0}
+[Acceptor bart] Drop MSG: {sorry,{prepare,{8,fry}}} to <0.105.0>
+[Acceptor lisa] Drop MSG: {sorry,{prepare,{8,fry}}} to <0.105.0>
+[Acceptor maggie] Drop MSG: {sorry,{prepare,{8,fry}}} to <0.105.0>
+[Proposer fry] Phase 1: round {9,fry} proposal {255,0,0}
+[Acceptor lisa] Phase 1: promised {9,fry} voted {8,leela} colour {0,255,0}
+[Acceptor bart] Drop MSG: {promise,{9,fry},{8,leela},{0,255,0}} to <0.105.0>
+[Acceptor maggie] Drop MSG: {promise,{9,fry},{8,leela},{0,255,0}} to <0.105.0>
+[Acceptor homer] Phase 1: promised {9,fry} voted {8,leela} colour {0,255,0}
+[Acceptor marge] Phase 1: promised {9,fry} voted {8,leela} colour {0,255,0}
+[Proposer fry] Phase 2: round {9,fry} proposal {0,255,0} (was {255,0,0})
+[Acceptor bart] Phase 1: promised {9,fry} voted {8,leela} colour {0,255,0}
+[Acceptor maggie] Phase 1: promised {9,fry} voted {8,leela} colour {0,255,0}
+[Acceptor homer] Drop MSG: {vote,{9,fry}} to <0.105.0>
+[Acceptor marge] Phase 2: promised {9,fry} voted {9,fry} colour {0,255,0}
+[Acceptor lisa] Phase 2: promised {9,fry} voted {9,fry} colour {0,255,0}
+[Acceptor bart] Phase 2: promised {9,fry} voted {9,fry} colour {0,255,0}
+[Proposer fry] DECIDED {0,255,0} in round {9,fry} after 20159 ms
+[Acceptor maggie] Drop MSG: {vote,{9,fry}} to <0.105.0>
+[Acceptor homer] Phase 2: promised {9,fry} voted {9,fry} colour {0,255,0}
+[Paxy] Total elapsed time: 20174 ms
+[Acceptor maggie] Phase 2: promised {9,fry} voted {9,fry} colour {0,255,0}

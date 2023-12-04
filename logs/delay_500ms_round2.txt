@@ -1,0 +1,113 @@
+1> paxy:start([1,1,1]).
+[Gui] state requested
+<0.104.0>
+[Proposer fry] Phase 1: round {0,fry} proposal {255,0,0}
+[Proposer bender] Phase 1: round {0,bender} proposal {0,255,0}
+[Proposer leela] Phase 1: round {0,leela} proposal {0,0,255}
+[Acceptor bart] Send MSG: {promise,{0,fry},{0,0},na} to <0.105.0> with delay 323 ms
+[Acceptor lisa] Send MSG: {promise,{0,fry},{0,0},na} to <0.105.0> with delay 37 ms
+[Acceptor maggie] Send MSG: {promise,{0,fry},{0,0},na} to <0.105.0> with delay 303 ms
+[Acceptor homer] Send MSG: {promise,{0,fry},{0,0},na} to <0.105.0> with delay 444 ms
+[Acceptor marge] Send MSG: {promise,{0,fry},{0,0},na} to <0.105.0> with delay 62 ms
+[Acceptor bart] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor homer] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor bart] Send MSG: {sorry,{prepare,{0,bender}}} to <0.106.0> with delay 17 ms
+[Acceptor lisa] Send MSG: {sorry,{prepare,{0,bender}}} to <0.106.0> with delay 360 ms
+[Acceptor maggie] Send MSG: {sorry,{prepare,{0,bender}}} to <0.106.0> with delay 283 ms
+[Acceptor homer] Send MSG: {sorry,{prepare,{0,bender}}} to <0.106.0> with delay 397 ms
+[Acceptor marge] Send MSG: {sorry,{prepare,{0,bender}}} to <0.106.0> with delay 250 ms
+[Acceptor bart] Send MSG: {promise,{0,leela},{0,0},na} to <0.107.0> with delay 241 ms
+[Acceptor lisa] Send MSG: {promise,{0,leela},{0,0},na} to <0.107.0> with delay 113 ms
+[Acceptor maggie] Send MSG: {promise,{0,leela},{0,0},na} to <0.107.0> with delay 186 ms
+[Acceptor homer] Send MSG: {promise,{0,leela},{0,0},na} to <0.107.0> with delay 72 ms
+[Acceptor marge] Send MSG: {promise,{0,leela},{0,0},na} to <0.107.0> with delay 235 ms
+[Acceptor bart] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor homer] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {0,leela} voted {0,0} colour na
+[Proposer leela] Phase 2: round {0,leela} proposal {0,0,255} (was {0,0,255})
+[Acceptor homer] Send MSG: {vote,{0,leela}} to <0.107.0> with delay 479 ms
+[Acceptor marge] Send MSG: {vote,{0,leela}} to <0.107.0> with delay 461 ms
+[Acceptor bart] Send MSG: {vote,{0,leela}} to <0.107.0> with delay 5 ms
+[Acceptor lisa] Send MSG: {vote,{0,leela}} to <0.107.0> with delay 340 ms
+[Acceptor maggie] Send MSG: {vote,{0,leela}} to <0.107.0> with delay 407 ms
+[Acceptor homer] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor maggie] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Proposer fry] Phase 2: round {0,fry} proposal {255,0,0} (was {255,0,0})
+[Acceptor homer] Send MSG: {sorry,{accept,{0,fry}}} to <0.105.0> with delay 270 ms
+[Acceptor marge] Send MSG: {sorry,{accept,{0,fry}}} to <0.105.0> with delay 431 ms
+[Acceptor bart] Send MSG: {sorry,{accept,{0,fry}}} to <0.105.0> with delay 75 ms
+[Acceptor lisa] Send MSG: {sorry,{accept,{0,fry}}} to <0.105.0> with delay 48 ms
+[Acceptor maggie] Send MSG: {sorry,{accept,{0,fry}}} to <0.105.0> with delay 101 ms
+[Proposer leela] DECIDED {0,0,255} in round {0,leela} after 661 ms
+[Proposer bender] Phase 1: round {1,bender} proposal {0,255,0}
+[Acceptor marge] Send MSG: {promise,{1,bender},{0,leela},{0,0,255}} to <0.106.0> with delay 104 ms
+[Acceptor homer] Send MSG: {promise,{1,bender},{0,leela},{0,0,255}} to <0.106.0> with delay 53 ms
+[Acceptor bart] Send MSG: {promise,{1,bender},{0,leela},{0,0,255}} to <0.106.0> with delay 344 ms
+[Acceptor lisa] Send MSG: {promise,{1,bender},{0,leela},{0,0,255}} to <0.106.0> with delay 359 ms
+[Acceptor maggie] Send MSG: {promise,{1,bender},{0,leela},{0,0,255}} to <0.106.0> with delay 433 ms
+[Acceptor marge] Phase 1: promised {1,bender} voted {0,leela} colour {0,0,255}
+[Acceptor homer] Phase 1: promised {1,bender} voted {0,leela} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {1,bender} voted {0,leela} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {1,bender} voted {0,leela} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {1,bender} voted {0,leela} colour {0,0,255}
+[Proposer fry] Phase 1: round {1,fry} proposal {255,0,0}
+[Acceptor homer] Send MSG: {promise,{1,fry},{0,leela},{0,0,255}} to <0.105.0> with delay 488 ms
+[Acceptor marge] Send MSG: {promise,{1,fry},{0,leela},{0,0,255}} to <0.105.0> with delay 365 ms
+[Acceptor bart] Send MSG: {promise,{1,fry},{0,leela},{0,0,255}} to <0.105.0> with delay 214 ms
+[Acceptor lisa] Send MSG: {promise,{1,fry},{0,leela},{0,0,255}} to <0.105.0> with delay 157 ms
+[Acceptor maggie] Send MSG: {promise,{1,fry},{0,leela},{0,0,255}} to <0.105.0> with delay 497 ms
+[Acceptor homer] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor marge] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Proposer bender] Phase 2: round {1,bender} proposal {0,0,255} (was {0,255,0})
+[Acceptor lisa] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor marge] Send MSG: {sorry,{accept,{1,bender}}} to <0.106.0> with delay 64 ms
+[Acceptor homer] Send MSG: {sorry,{accept,{1,bender}}} to <0.106.0> with delay 235 ms
+[Acceptor bart] Send MSG: {sorry,{accept,{1,bender}}} to <0.106.0> with delay 331 ms
+[Acceptor lisa] Send MSG: {sorry,{accept,{1,bender}}} to <0.106.0> with delay 420 ms
+[Acceptor maggie] Send MSG: {sorry,{accept,{1,bender}}} to <0.106.0> with delay 32 ms
+[Proposer fry] Phase 2: round {1,fry} proposal {0,0,255} (was {255,0,0})
+[Acceptor homer] Send MSG: {vote,{1,fry}} to <0.105.0> with delay 75 ms
+[Acceptor marge] Send MSG: {vote,{1,fry}} to <0.105.0> with delay 293 ms
+[Acceptor lisa] Send MSG: {vote,{1,fry}} to <0.105.0> with delay 425 ms
+[Acceptor maggie] Send MSG: {vote,{1,fry}} to <0.105.0> with delay 281 ms
+[Acceptor bart] Send MSG: {vote,{1,fry}} to <0.105.0> with delay 385 ms
+[Acceptor homer] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor maggie] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Proposer fry] DECIDED {0,0,255} in round {1,fry} after 3482 ms
+[Proposer bender] Phase 1: round {2,bender} proposal {0,255,0}
+[Acceptor homer] Send MSG: {promise,{2,bender},{1,fry},{0,0,255}} to <0.106.0> with delay 220 ms
+[Acceptor marge] Send MSG: {promise,{2,bender},{1,fry},{0,0,255}} to <0.106.0> with delay 488 ms
+[Acceptor bart] Send MSG: {promise,{2,bender},{1,fry},{0,0,255}} to <0.106.0> with delay 359 ms
+[Acceptor lisa] Send MSG: {promise,{2,bender},{1,fry},{0,0,255}} to <0.106.0> with delay 403 ms
+[Acceptor maggie] Send MSG: {promise,{2,bender},{1,fry},{0,0,255}} to <0.106.0> with delay 396 ms
+[Acceptor homer] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor marge] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Proposer bender] Phase 2: round {2,bender} proposal {0,0,255} (was {0,255,0})
+[Acceptor homer] Send MSG: {vote,{2,bender}} to <0.106.0> with delay 130 ms
+[Acceptor marge] Send MSG: {vote,{2,bender}} to <0.106.0> with delay 437 ms
+[Acceptor bart] Send MSG: {vote,{2,bender}} to <0.106.0> with delay 438 ms
+[Acceptor lisa] Send MSG: {vote,{2,bender}} to <0.106.0> with delay 198 ms
+[Acceptor maggie] Send MSG: {vote,{2,bender}} to <0.106.0> with delay 173 ms
+[Acceptor homer] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor maggie] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Proposer bender] DECIDED {0,0,255} in round {2,bender} after 5896 ms
+[Paxy] Total elapsed time: 5906 ms

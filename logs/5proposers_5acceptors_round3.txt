@@ -1,0 +1,213 @@
+3> paxy:start([1,1,1,1,1]).
+[Gui] state requested
+<0.147.0>
+[Proposer fry] Phase 1: round {0,fry} proposal {255,0,0}
+[Proposer bender] Phase 1: round {0,bender} proposal {0,255,0}
+[Proposer leela] Phase 1: round {0,leela} proposal {0,0,255}
+[Proposer zoidberg] Phase 1: round {0,zoidberg} proposal {255,0,255}
+[Proposer zapp] Phase 1: round {0,zapp} proposal {0,255,255}
+[Acceptor marge] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {0,fry} voted {0,0} colour na
+[Proposer fry] Phase 2: round {0,fry} proposal {255,0,0} (was {255,0,0})
+[Acceptor homer] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {0,leela} voted {0,0} colour na
+[Proposer leela] Phase 2: round {0,leela} proposal {0,0,255} (was {0,0,255})
+[Acceptor maggie] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor homer] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Proposer zoidberg] Phase 2: round {0,zoidberg} proposal {255,0,255} (was {255,0,255})
+[Acceptor maggie] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Acceptor homer] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Acceptor marge] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Acceptor bart] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Acceptor lisa] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Proposer zoidberg] DECIDED {255,0,255} in round {0,zoidberg} after 13 ms
+[Acceptor maggie] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Acceptor homer] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Proposer fry] Phase 1: round {1,fry} proposal {255,0,0}
+[Proposer zapp] Phase 1: round {1,zapp} proposal {0,255,255}
+[Acceptor homer] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Acceptor bart] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Proposer fry] Phase 2: round {1,fry} proposal {255,0,255} (was {255,0,0})
+[Acceptor homer] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Acceptor bart] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Proposer zapp] Phase 2: round {1,zapp} proposal {255,0,255} (was {0,255,255})
+[Acceptor lisa] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Proposer bender] Phase 1: round {1,bender} proposal {0,255,0}
+[Proposer leela] Phase 1: round {1,leela} proposal {0,0,255}
+[Acceptor marge] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Acceptor homer] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Proposer zapp] DECIDED {255,0,255} in round {1,zapp} after 2028 ms
+[Acceptor bart] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Acceptor lisa] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Acceptor maggie] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Proposer fry] Phase 1: round {2,fry} proposal {255,0,0}
+[Proposer bender] Phase 1: round {2,bender} proposal {0,255,0}
+[Proposer leela] Phase 1: round {2,leela} proposal {0,0,255}
+[Acceptor homer] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Acceptor bart] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Proposer fry] Phase 2: round {2,fry} proposal {255,0,255} (was {255,0,0})
+[Acceptor homer] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Acceptor bart] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Proposer leela] Phase 2: round {2,leela} proposal {255,0,255} (was {0,0,255})
+[Acceptor maggie] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Acceptor homer] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Acceptor marge] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Acceptor bart] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Proposer leela] DECIDED {255,0,255} in round {2,leela} after 4072 ms
+[Acceptor maggie] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Acceptor lisa] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Proposer bender] Phase 1: round {3,bender} proposal {0,255,0}
+[Proposer fry] Phase 1: round {3,fry} proposal {255,0,0}
+[Acceptor homer] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Acceptor bart] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Proposer bender] Phase 2: round {3,bender} proposal {255,0,255} (was {0,255,0})
+[Acceptor homer] Phase 1: promised {3,fry} voted {2,leela} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {3,fry} voted {2,leela} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {3,fry} voted {2,leela} colour {255,0,255}
+[Proposer fry] Phase 2: round {3,fry} proposal {255,0,255} (was {255,0,0})
+[Acceptor bart] Phase 1: promised {3,fry} voted {2,leela} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {3,fry} voted {2,leela} colour {255,0,255}
+[Acceptor homer] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Acceptor marge] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Acceptor lisa] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Proposer fry] DECIDED {255,0,255} in round {3,fry} after 6138 ms
+[Acceptor bart] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Acceptor maggie] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Proposer bender] Phase 1: round {4,bender} proposal {0,255,0}
+[Acceptor homer] Phase 1: promised {4,bender} voted {3,fry} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {4,bender} voted {3,fry} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {4,bender} voted {3,fry} colour {255,0,255}
+[Proposer bender] Phase 2: round {4,bender} proposal {255,0,255} (was {0,255,0})
+[Acceptor bart] Phase 1: promised {4,bender} voted {3,fry} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {4,bender} voted {3,fry} colour {255,0,255}
+[Acceptor lisa] Phase 2: promised {4,bender} voted {4,bender} colour {255,0,255}
+[Acceptor homer] Phase 2: promised {4,bender} voted {4,bender} colour {255,0,255}
+[Acceptor marge] Phase 2: promised {4,bender} voted {4,bender} colour {255,0,255}
+[Proposer bender] DECIDED {255,0,255} in round {4,bender} after 8179 ms
+[Acceptor bart] Phase 2: promised {4,bender} voted {4,bender} colour {255,0,255}
+[Acceptor maggie] Phase 2: promised {4,bender} voted {4,bender} colour {255,0,255}
+[Paxy] Total elapsed time: 8184 ms
+4> paxy:stop().
+stop
+5> paxy:start([1,1,1,1,1]).
+[Gui] state requested
+<0.188.0>
+[Proposer fry] Phase 1: round {0,fry} proposal {255,0,0}
+[Proposer bender] Phase 1: round {0,bender} proposal {0,255,0}
+[Proposer leela] Phase 1: round {0,leela} proposal {0,0,255}
+[Proposer zoidberg] Phase 1: round {0,zoidberg} proposal {255,0,255}
+[Proposer zapp] Phase 1: round {0,zapp} proposal {0,255,255}
+[Acceptor bart] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor homer] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {0,fry} voted {0,0} colour na
+[Proposer fry] Phase 2: round {0,fry} proposal {255,0,0} (was {255,0,0})
+[Acceptor maggie] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor homer] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,leela} voted {0,0} colour na
+[Proposer leela] Phase 2: round {0,leela} proposal {0,0,255} (was {0,0,255})
+[Acceptor marge] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Acceptor homer] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Proposer zoidberg] Phase 2: round {0,zoidberg} proposal {255,0,255} (was {255,0,255})
+[Acceptor marge] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {0,zoidberg} voted {0,0} colour na
+[Acceptor homer] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Acceptor bart] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Acceptor lisa] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Proposer zoidberg] DECIDED {255,0,255} in round {0,zoidberg} after 4 ms
+[Acceptor marge] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Acceptor maggie] Phase 2: promised {0,zoidberg} voted {0,zoidberg} colour {255,0,255}
+[Proposer fry] Phase 1: round {1,fry} proposal {255,0,0}
+[Proposer zapp] Phase 1: round {1,zapp} proposal {0,255,255}
+[Proposer leela] Phase 1: round {1,leela} proposal {0,0,255}
+[Proposer bender] Phase 1: round {1,bender} proposal {0,255,0}
+[Acceptor bart] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Acceptor homer] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {1,fry} voted {0,zoidberg} colour {255,0,255}
+[Proposer fry] Phase 2: round {1,fry} proposal {255,0,255} (was {255,0,0})
+[Acceptor bart] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Acceptor homer] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Proposer zapp] Phase 2: round {1,zapp} proposal {255,0,255} (was {0,255,255})
+[Acceptor maggie] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {1,zapp} voted {0,zoidberg} colour {255,0,255}
+[Acceptor marge] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Acceptor homer] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Acceptor bart] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Proposer zapp] DECIDED {255,0,255} in round {1,zapp} after 2031 ms
+[Acceptor maggie] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Acceptor lisa] Phase 2: promised {1,zapp} voted {1,zapp} colour {255,0,255}
+[Proposer fry] Phase 1: round {2,fry} proposal {255,0,0}
+[Proposer leela] Phase 1: round {2,leela} proposal {0,0,255}
+[Proposer bender] Phase 1: round {2,bender} proposal {0,255,0}
+[Acceptor marge] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Acceptor homer] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Acceptor bart] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {2,fry} voted {1,zapp} colour {255,0,255}
+[Proposer fry] Phase 2: round {2,fry} proposal {255,0,255} (was {255,0,0})
+[Acceptor marge] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Acceptor homer] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Acceptor bart] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Proposer leela] Phase 2: round {2,leela} proposal {255,0,255} (was {0,0,255})
+[Acceptor lisa] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {2,leela} voted {1,zapp} colour {255,0,255}
+[Acceptor homer] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Acceptor bart] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Acceptor marge] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Proposer leela] DECIDED {255,0,255} in round {2,leela} after 4064 ms
+[Acceptor lisa] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Acceptor maggie] Phase 2: promised {2,leela} voted {2,leela} colour {255,0,255}
+[Proposer bender] Phase 1: round {3,bender} proposal {0,255,0}
+[Acceptor bart] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Acceptor homer] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {3,bender} voted {2,leela} colour {255,0,255}
+[Proposer bender] Phase 2: round {3,bender} proposal {255,0,255} (was {0,255,0})
+[Acceptor marge] Phase 2: promised {3,bender} voted {3,bender} colour {255,0,255}
+[Acceptor homer] Phase 2: promised {3,bender} voted {3,bender} colour {255,0,255}
+[Acceptor lisa] Phase 2: promised {3,bender} voted {3,bender} colour {255,0,255}
+[Acceptor bart] Phase 2: promised {3,bender} voted {3,bender} colour {255,0,255}
+[Acceptor maggie] Phase 2: promised {3,bender} voted {3,bender} colour {255,0,255}
+[Proposer bender] DECIDED {255,0,255} in round {3,bender} after 6100 ms
+[Proposer fry] Phase 1: round {3,fry} proposal {255,0,0}
+[Acceptor bart] Phase 1: promised {3,fry} voted {3,bender} colour {255,0,255}
+[Acceptor homer] Phase 1: promised {3,fry} voted {3,bender} colour {255,0,255}
+[Acceptor marge] Phase 1: promised {3,fry} voted {3,bender} colour {255,0,255}
+[Acceptor lisa] Phase 1: promised {3,fry} voted {3,bender} colour {255,0,255}
+[Acceptor maggie] Phase 1: promised {3,fry} voted {3,bender} colour {255,0,255}
+[Proposer fry] Phase 2: round {3,fry} proposal {255,0,255} (was {255,0,0})
+[Acceptor marge] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Acceptor homer] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Acceptor bart] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Acceptor lisa] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Acceptor maggie] Phase 2: promised {3,fry} voted {3,fry} colour {255,0,255}
+[Proposer fry] DECIDED {255,0,255} in round {3,fry} after 6105 ms
+[Paxy] Total elapsed time: 6119 ms

@@ -1,0 +1,87 @@
+1> paxy:start([1,1,1]).
+[Gui] state requested
+<0.114.0>
+[Proposer fry] Phase 1: round {0,fry} proposal {255,0,0}
+[Proposer bender] Phase 1: round {0,bender} proposal {0,255,0}
+[Proposer leela] Phase 1: round {0,leela} proposal {0,0,255}
+[Acceptor moe] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor ned] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor homer] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor abraham] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor burns] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor apu] Phase 1: promised {0,fry} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,fry} voted {0,0} colour na
+[Proposer fry] Phase 2: round {0,fry} proposal {255,0,0} (was {255,0,0})
+[Acceptor moe] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor ned] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor marge] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor homer] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor bart] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor abraham] Phase 1: promised {0,leela} voted {0,0} colour na
+[Proposer leela] Phase 2: round {0,leela} proposal {0,0,255} (was {0,0,255})
+[Acceptor burns] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor maggie] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor apu] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor lisa] Phase 1: promised {0,leela} voted {0,0} colour na
+[Acceptor homer] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor abraham] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor ned] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor moe] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Proposer leela] DECIDED {0,0,255} in round {0,leela} after 46 ms
+[Acceptor burns] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor maggie] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor apu] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {0,leela} voted {0,leela} colour {0,0,255}
+[Proposer fry] Phase 1: round {1,fry} proposal {255,0,0}
+[Proposer bender] Phase 1: round {1,bender} proposal {0,255,0}
+[Acceptor homer] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor lisa] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor marge] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor apu] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor burns] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Proposer fry] Phase 2: round {1,fry} proposal {0,0,255} (was {255,0,0})
+[Acceptor abraham] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor moe] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor ned] Phase 1: promised {1,fry} voted {0,leela} colour {0,0,255}
+[Acceptor homer] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor lisa] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor maggie] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor burns] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Proposer fry] DECIDED {0,0,255} in round {1,fry} after 2072 ms
+[Acceptor apu] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor moe] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor abraham] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Acceptor ned] Phase 2: promised {1,fry} voted {1,fry} colour {0,0,255}
+[Proposer bender] Phase 1: round {2,bender} proposal {0,255,0}
+[Acceptor homer] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor maggie] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor bart] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor moe] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor abraham] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor apu] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor ned] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor marge] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Proposer bender] Phase 2: round {2,bender} proposal {0,0,255} (was {0,255,0})
+[Acceptor lisa] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor burns] Phase 1: promised {2,bender} voted {1,fry} colour {0,0,255}
+[Acceptor homer] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor marge] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor maggie] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor bart] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor moe] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor apu] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor abraham] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor ned] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Proposer bender] DECIDED {0,0,255} in round {2,bender} after 4116 ms
+[Acceptor lisa] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Acceptor burns] Phase 2: promised {2,bender} voted {2,bender} colour {0,0,255}
+[Paxy] Total elapsed time: 4129 ms
