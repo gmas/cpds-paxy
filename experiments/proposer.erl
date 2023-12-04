@@ -54,41 +54,49 @@ ballot(Name, Round, Proposal, Acceptors, PanelId) ->
       abort
   end.
 
-collect(0, _, _, Proposal) ->
-  {accepted, Proposal};
 collect(N, Round, MaxVoted, Proposal) ->
+  collect(N, N, Round, MaxVoted, Proposal).
+collect(0, _, _, _, Proposal) ->
+  {accepted, Proposal};
+collect(_, 0, _, _, _) ->
+  abort;
+collect(NumPromise, NumSorry, Round, MaxVoted, Proposal) ->
   receive
     {promise, Round, _, na} ->
-      collect(N-1, Round, MaxVoted, Proposal);
+      collect(NumPromise-1, NumSorry, Round, MaxVoted, Proposal);
     {promise, Round, Voted, Value} ->
       case order:gr(Voted, MaxVoted) of
         true ->
-          collect(N-1, Round, Voted, Value);
+          collect(NumPromise-1, NumSorry, Round, Voted, Value);
         false ->
-          collect(N-1, Round, MaxVoted, Proposal)
+          collect(NumPromise-1, NumSorry, Round, MaxVoted, Proposal)
       end;
     {promise, _, _,  _} ->
-      collect(N, Round, MaxVoted, Proposal);
+      collect(NumPromise, NumSorry, Round, MaxVoted, Proposal);
     {sorry, {prepare, Round}} ->
-      collect(N, Round, MaxVoted, Proposal);
+      collect(NumPromise, NumSorry-1, Round, MaxVoted, Proposal);
     {sorry, _} ->
-      collect(N, Round, MaxVoted, Proposal)
+      collect(NumPromise, NumSorry-1, MaxVoted, Proposal)
   after ?timeout ->
     abort
   end.
 
-vote(0, _) ->
-  ok;
 vote(N, Round) ->
+  vote(N, N, Round).
+vote(0, _, _) ->
+  ok;
+vote(_, 0, _) ->
+  abort;
+vote(NumVote, NumSorry, Round) ->
   receive
     {vote, Round} ->
-      vote(N-1, Round);
+      vote(NumVote-1, NumSorry, Round);
     {vote, _} ->
-      vote(N, Round);
+      vote(NumVote, NumSorry, Round);
     {sorry, {accept, Round}} ->
-      vote(N, Round);
+      vote(NumVote, NumSorry-1, Round);
     {sorry, _} ->
-      vote(N, Round)
+      vote(NumVote, NumSorry-1, Round)
   after ?timeout ->
     abort
   end.
