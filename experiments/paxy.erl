@@ -1,5 +1,5 @@
 -module(paxy).
--export([start/1, stop/0, stop/1, crash/1]).
+-export([start/1, stop/0, stop/1, crash/1, start_distribution/2]).
 
 -define(RED, {255,0,0}).
 -define(BLUE, {0,0,255}).
@@ -97,4 +97,27 @@ crash(Name) ->
       exit(Pid, "crash"),
       timer:sleep(3000),
       register(Name, acceptor:start(Name, na))
+  end.
+
+start_distribution(Sleep, ProNode) ->
+  AcceptorNames = ["Homer", "Marge", "Bart", "Lisa", "Maggie"],
+  AccRegister = [homer, marge, bart, lisa, maggie],
+  ProposerNames = [{"Fry", ?RED}, {"Bender", ?GREEN}, {"Leela", ?BLUE}],
+  PropInfo = [{fry, ?RED}, {bender, ?GREEN}, {leela, ?BLUE}],
+  register(gui, spawn(fun() -> gui:start(AcceptorNames, ProposerNames) end)),
+  gui ! {reqState, self()},
+  receive
+    {reqState, State} ->
+      {AccIds, PropIds} = State,
+      start_acceptors(AccIds, AccRegister),
+      AccRegisterDist = lists:map(fun(Acc) -> {Acc, ProNode} end, AccRegister),
+      io:format("[Paxy] AccRegisterDist: ~w~n", [AccRegisterDist]),
+      spawn(ProNode, fun() ->
+        Begin = erlang:monotonic_time(),
+        start_proposers(PropIds, PropInfo, AccRegisterDist, Sleep, self()),
+        wait_proposers(length(PropIds)),
+        End = erlang:monotonic_time(),
+        Elapsed = erlang:convert_time_unit(End-Begin, native, millisecond),
+        io:format("[Paxy] Total elapsed time: ~w ms~n", [Elapsed])
+      end)
   end.
