@@ -68,11 +68,11 @@ stop() ->
   stop(bart),
   stop(lisa),
   stop(maggie),
-  stop(burns),
-  stop(apu),
-  stop(abraham),
-  stop(ned),
-  stop(moe),
+  %stop(burns),
+  %stop(apu),
+  %stop(abraham),
+  %stop(ned),
+  %stop(moe),
   stop(gui).
 
 stop(Name) ->
