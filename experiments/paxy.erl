@@ -9,10 +9,14 @@
 
 % Sleep is a list with the initial sleep time for each proposer
 start(Sleep) ->
-  AcceptorNames = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Burns", "Apu", "Abraham", "Ned", "Moe"],
-  AccRegister = [homer, marge, bart, lisa, maggie, burns, apu, abraham, ned, moe],
-  ProposerNames = [{"Fry", ?RED}, {"Bender", ?GREEN}, {"Leela", ?BLUE}, {"ZoidBerg", ?MAGENTA}, {"Zapp", ?CYAN}],
-  PropInfo = [{fry, ?RED}, {bender, ?GREEN}, {leela, ?BLUE}, {zoidberg, ?MAGENTA}, {zapp, ?CYAN}],
+  %AcceptorNames = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Burns", "Apu", "Abraham", "Ned", "Moe"],
+  %AccRegister = [homer, marge, bart, lisa, maggie, burns, apu, abraham, ned, moe],
+  %ProposerNames = [{"Fry", ?RED}, {"Bender", ?GREEN}, {"Leela", ?BLUE}, {"ZoidBerg", ?MAGENTA}, {"Zapp", ?CYAN}],
+  %PropInfo = [{fry, ?RED}, {bender, ?GREEN}, {leela, ?BLUE}, {zoidberg, ?MAGENTA}, {zapp, ?CYAN}],
+  AcceptorNames = ["Homer", "Marge", "Bart", "Lisa", "Maggie"],
+  AccRegister = [homer, marge, bart, lisa, maggie],
+  ProposerNames = [{"Fry", ?RED}, {"Bender", ?GREEN}, {"Leela", ?BLUE}],
+  PropInfo = [{fry, ?RED}, {bender, ?GREEN}, {leela, ?BLUE}],
   register(gui, spawn(fun() -> gui:start(AcceptorNames, ProposerNames) end)),
   gui ! {reqState, self()},
   receive
