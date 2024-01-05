@@ -63,6 +63,7 @@ wait_proposers(N) ->
   end.
 
 stop() ->
+  %lists:map(fun(E) ->stop(E) end, AccRegister),
   stop(homer),
   stop(marge),
   stop(bart),

@@ -57,8 +57,10 @@ ballot(Name, Round, Proposal, Acceptors, PanelId) ->
 collect(N, Round, MaxVoted, Proposal) ->
   collect(N, N, Round, MaxVoted, Proposal).
 collect(0, _, _, _, Proposal) ->
+  io:format("[Proposer] Collect promise messages within a quorum.~n"),
   {accepted, Proposal};
 collect(_, 0, _, _, _) ->
+  io:format("[Proposer] Collect sorry messages within a quorum.~n"),
   abort;
 collect(NumPromise, NumSorry, Round, MaxVoted, Proposal) ->
   receive
@@ -76,7 +78,7 @@ collect(NumPromise, NumSorry, Round, MaxVoted, Proposal) ->
     {sorry, {prepare, Round}} ->
       collect(NumPromise, NumSorry-1, Round, MaxVoted, Proposal);
     {sorry, _} ->
-      collect(NumPromise, NumSorry-1, MaxVoted, Proposal)
+      collect(NumPromise, NumSorry, MaxVoted, Proposal)
   after ?timeout ->
     abort
   end.
@@ -84,8 +86,10 @@ collect(NumPromise, NumSorry, Round, MaxVoted, Proposal) ->
 vote(N, Round) ->
   vote(N, N, Round).
 vote(0, _, _) ->
+  io:format("[Proposer] Collect vote messages within a quorum.~n"),
   ok;
 vote(_, 0, _) ->
+  io:format("[Proposer] Collect sorry messages within a quorum.~n"),
   abort;
 vote(NumVote, NumSorry, Round) ->
   receive
@@ -96,7 +100,7 @@ vote(NumVote, NumSorry, Round) ->
     {sorry, {accept, Round}} ->
       vote(NumVote, NumSorry-1, Round);
     {sorry, _} ->
-      vote(NumVote, NumSorry-1, Round)
+      vote(NumVote, NumSorry, Round)
   after ?timeout ->
     abort
   end.
@@ -115,6 +119,7 @@ accept(Round, Proposal, Acceptors) ->
 
 send(Name, Message) ->
   if is_tuple(Name) -> %remote
+    io:format("[Proposer] send remotely to ~w~n", Name),
     Name ! Message;
   true -> %local
     case whereis(Name) of

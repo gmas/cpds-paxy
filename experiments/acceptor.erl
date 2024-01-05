@@ -9,18 +9,18 @@ start(Name, PanelId) ->
   spawn(fun() -> init(Name, PanelId) end).
 
 init(Name, PanelId) ->
-  Promised = order:null(),
-  Voted = order:null(),
-  Value = na,
   pers:open(Name),
-  {Pr, Vt, Ac, Pn} = pers:read(Name),
+  {Promised, Voted, Value, Pn} = pers:read(Name),
   case Pn == na of
     true ->
+      pers:store(Name, Promised, Voted, Value, PanelId),
+      pers:close(Name),
       acceptor(Name, Promised, Voted, Value, PanelId);
     false ->
-      Pn ! {updateAcc, "Restarted: " ++ io_lib:format("~p", [Vt]),
-          "Promised: " ++ io_lib:format("~p", [Pr]), Ac},
-      acceptor(Name, Pr, Vt, Ac, Pn)
+      Pn ! {updateAcc, "Restarted: " ++ io_lib:format("~p", [Voted]),
+          "Promised: " ++ io_lib:format("~p", [Promised]), Value},
+      pers:close(Name),
+      acceptor(Name, Promised, Voted, Value, Pn)
     end.
 
 acceptor(Name, Promised, Voted, Value, PanelId) ->
@@ -28,7 +28,9 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
     {prepare, Proposer, Round} ->
       case order:gr(Round, Promised) of
         true ->
+          pers:open(Name),
           pers:store(Name, Round, Voted, Value, PanelId),
+          pers:close(Name),
           send(Name, Proposer, {promise, Round, Voted, Value}, ?delay, ?drop_prob, ?drop_sorry),
       io:format("[Acceptor ~w] Phase 1: promised ~w voted ~w colour ~w~n",
                  [Name, Round, Voted, Value]),
@@ -47,6 +49,9 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
           send(Name, Proposer, {vote, Round}, ?delay, ?drop_prob, ?drop_sorry),
           case order:goe(Round, Voted) of
             true ->
+              pers:open(Name),
+              pers:store(Name, Promised, Round, Value, PanelId),
+              pers:close(Name),
       io:format("[Acceptor ~w] Phase 2: promised ~w voted ~w colour ~w~n",
                  [Name, Promised, Round, Proposal]),
               % Update gui
@@ -54,7 +59,6 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
                          "Promised: " ++ io_lib:format("~p", [Promised]), Proposal},
               acceptor(Name, Promised, Round, Proposal, PanelId);
             false ->
-              pers:store(Name, Promised, Round, Value, PanelId),
               acceptor(Name, Promised, Voted, Value, PanelId)
           end;
         false ->
@@ -63,6 +67,7 @@ acceptor(Name, Promised, Voted, Value, PanelId) ->
       end;
     stop ->
       PanelId ! stop,
+      pers:delete(Name);
       ok
   end.
 
